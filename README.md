@@ -18,7 +18,7 @@ Current focus: **agent security, context injection, evaluation infrastructure, r
 ## Open-source contributions
 
 - **[Kimi K3 in C — PR #6](https://github.com/FareedKhan-dev/kimi-k3-in-c/pull/6)** — merged checkpoint-integrity work introducing immutable Hugging Face revision pinning and checksum verification so same-size corruption cannot pass size-only validation. The upstream first-run consolidation later retained and further hardened this path.
-- **[Kimi K3 in C — PR #13](https://github.com/FareedKhan-dev/kimi-k3-in-c/pull/13)** — open regression-test contribution for synthetic trunk streaming, including one-slot async-prefetch corruption, ring wraparound, slot isolation, and failed-read publication safety.
+- **[Kimi K3 in C — PR #13](https://github.com/FareedKhan-dev/kimi-k3-in-c/pull/13)** — merged regression coverage for a silent trunk-streaming corruption failure where one-slot async prefetch can overwrite the layer still being computed. Adds a synthetic checkpoint-free fixture covering the one-slot guard, two-slot prefetch isolation, ring wraparound, and failed-read publication safety; the mutation check fails when the guard is deliberately defeated.
 
 ## Honorable mentions
 
