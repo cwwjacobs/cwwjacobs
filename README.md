@@ -4,12 +4,16 @@ I build evidence-first infrastructure for AI systems: observable agent runs, det
 
 The common thread is simple: **probabilistic systems should leave deterministic evidence behind.**
 
-## Merged upstream engineering
+## Upstream contributor — kimi-k3-in-c
 
-Two contributions to [FareedKhan-dev/kimi-k3-in-c](https://github.com/FareedKhan-dev/kimi-k3-in-c) have been merged upstream:
+I contribute to [FareedKhan-dev/kimi-k3-in-c](https://github.com/FareedKhan-dev/kimi-k3-in-c), a low-level C inference project where checkpoint integrity, buffer ownership, streaming, and memory behavior can directly affect model correctness.
 
-- **[PR #6 — verify checkpoint downloads against Hub checksums](https://github.com/FareedKhan-dev/kimi-k3-in-c/pull/6)** — replaced a removed Hugging Face CLI path, pinned immutable Hub revisions, and added checksum verification so same-size checkpoint corruption cannot silently pass size-only validation. Merged August 6, 2026.
-- **[PR #13 — synthetic trunk streaming regression coverage](https://github.com/FareedKhan-dev/kimi-k3-in-c/pull/13)** — added weightless regression coverage for one-slot/two-slot trunk streaming, async prefetch isolation, ring wraparound, and failed-read publication safety. The mutation check fails when the one-slot guard is deliberately defeated. Merged August 26, 2026.
+Two of my changes have been merged upstream:
+
+- **[PR #6 — verify checkpoint downloads against Hub checksums](https://github.com/FareedKhan-dev/kimi-k3-in-c/pull/6)** — repaired the downloader around the supported Hugging Face CLI, pinned immutable Hub revisions, and added checksum verification so a same-size corrupted checkpoint cannot silently pass size-only validation. The verification path was explicitly tested by changing a byte without changing file size and confirming the corruption was rejected. Merged August 6, 2026.
+- **[PR #13 — synthetic trunk streaming regression coverage](https://github.com/FareedKhan-dev/kimi-k3-in-c/pull/13)** — added checkpoint-free regression coverage for one-slot and two-slot trunk streaming, asynchronous prefetch isolation, ring wraparound, slot ownership, and failed-read publication safety. A mutation test deliberately defeats the one-slot guard and must fail, proving the regression test can actually detect the ownership error it protects against. Merged August 26, 2026.
+
+Both changes turn silent correctness risks into explicit, testable invariants: **byte integrity at the checkpoint boundary and buffer ownership at the streaming boundary.**
 
 ## Selected work
 
