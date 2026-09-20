@@ -1,36 +1,41 @@
 # Corey Jacobs
 
-I build evidence-first systems for tool-using agents: capture what happened, preserve provenance, test adversarial failure modes, and keep operator authority explicit.
+I build evidence-first infrastructure for AI systems: observable agent runs, deterministic verification, bounded authority, reproducible proof, and local-first tooling.
 
-Current focus: **agent security, context injection, evaluation infrastructure, reproducible execution evidence, and local-first tooling**.
-
-**GTDataworks** is the main line of work: an evidence pipeline for consequential agent runs, from captured execution to sealed evidence, evaluation receipts, and derived products.  
-[gtdataworks.com](https://gtdataworks.com)
+The common thread is simple: **probabilistic systems should leave deterministic evidence behind.**
 
 ## Selected work
 
-- **[Agent Flight Recorder](https://github.com/cwwjacobs/agent-flight-recorder)** — local-first recording for observable tool-using agent runs: model calls, tool calls/results, state snapshots, checkpoints, exports, regression cases, and eval seeds.
-- **[Crumple Zone](https://github.com/cwwjacobs/crumple-zone)** — Firecracker-based bounded agent exercises with host-owned mediation, quarantined raw output, trusted event streams, replay, and evidence verification.
-- **[GTDataworks Portlock](https://github.com/cwwjacobs/gtdataworks-portlock)** — shipped Linux USB mass-storage policy tool with soft/hard locking, session-lock behavior, attempt logging, `.deb` packaging, and a public apt repository.
-- **[DIF Defense](https://github.com/cwwjacobs/dif-defense)** — experimental behavioral prompt-injection detection that evaluates recorded agent behavior against a frozen set of forbidden actions.
-- **[GTDataworks-Labyrinth](https://github.com/cwwjacobs/GTDLabyrinth)** — public runtime architecture for captured and sealed agent execution, including a separately constrained range model for cyber environments.
+### [Agent Flight Recorder](https://github.com/cwwjacobs/agent-flight-recorder)
+Local-first observability for tool-using agents. Captures model calls, tool activity, state, checkpoints, replay evidence, exports, regression cases, and eval seeds.
 
-## Open-source contributions
+### [Terminus Release Protocol](https://github.com/cwwjacobs/terminus-release-protocol)
+Evidence-backed release machinery for AI capabilities. Runs controlled baseline/augmented pairs, admits claims through deterministic proof, and only renders release media after the evidence survives independent verification.
 
-- **[Kimi K3 in C — PR #6](https://github.com/FareedKhan-dev/kimi-k3-in-c/pull/6)** — merged checkpoint-integrity work introducing immutable Hugging Face revision pinning and checksum verification so same-size corruption cannot pass size-only validation. The upstream first-run consolidation later retained and further hardened this path.
-- **[Kimi K3 in C — PR #13](https://github.com/FareedKhan-dev/kimi-k3-in-c/pull/13)** — merged regression coverage for a silent trunk-streaming corruption failure where one-slot async prefetch can overwrite the layer still being computed. Adds a synthetic checkpoint-free fixture covering the one-slot guard, two-slot prefetch isolation, ring wraparound, and failed-read publication safety; the mutation check fails when the guard is deliberately defeated.
+### [Zero Authority Witness](https://github.com/cwwjacobs/zero-authority-witness)
+A receipt-bearing intake boundary for untrusted content. Converts external input into evidence-only data before LLM reasoning or action, with explicit authority and action gates.
 
-## Honorable mentions
+### [Card Forge](https://github.com/cwwjacobs/Card-Forge)
+Reusable workflow Cards, Stacks, Decks, Runs, and Receipts for AI-assisted work. Built around bounded instructions, provenance, operator approval, and portable execution packets.
 
-- **[Omega Harness](https://github.com/cwwjacobs/omega-harness)** — receipt-bearing, operator-authorized runtime sessions with tamper-evident lineage.
-- **[OpenAI Safety Hunt](https://github.com/cwwjacobs/oai-safety-hunt)** — scoped canary-only research harness for indirect prompt injection, MCP/tool-output poisoning, and reproducibility receipts.
-- **[Card Forge](https://github.com/cwwjacobs/Card-Forge)** — bounded card/deck workflow tooling with explicit operator approval and provenance rules.
-- **[Constellation](https://github.com/cwwjacobs/ixc-constellation)** — local evidence mapping and planned-vs-actual drift receipts for agent-assisted work.
+### [Terminus XI Protocol](https://github.com/cwwjacobs/terminus-xi-protocol)
+Deterministic watchdogs and admission rules for probabilistic systems. XI evaluates evidence against named boundaries and emits explicit ADMIT / REJECT outcomes with integrity receipts.
 
-## Working principles
+### [LocalParse](https://github.com/cwwjacobs/LocalParse)
+A local-first JSON and JSONL browser tool. No backend, no account, no telemetry, and no upload path: files stay in the browser while you inspect, navigate, and export them.
 
-- Evidence before claims.
-- Preserve primary artifacts; derive downstream products with lineage.
-- Treat untrusted context as data, not authority.
-- Make failure states explicit instead of silently widening scope.
-- Prefer reproducible receipts over plausible completion narratives.
+## What I care about
+
+- Evidence before claims
+- Untrusted context as data, never implicit authority
+- Reproducible receipts instead of plausible completion narratives
+- Explicit failure states instead of silent scope expansion
+- Local-first and operator-controlled workflows
+- Systems that can be inspected, replayed, challenged, and verified
+
+## Contact
+
+**Corey Jacobs**  
+Commercial licensing / project inquiries: **coresynth@gmail.com**
+
+Most current releases are source-available. Repository-specific license files control permitted use.
