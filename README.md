@@ -4,6 +4,13 @@ I build evidence-first infrastructure for AI systems: observable agent runs, det
 
 The common thread is simple: **probabilistic systems should leave deterministic evidence behind.**
 
+## Merged upstream engineering
+
+Two contributions to [FareedKhan-dev/kimi-k3-in-c](https://github.com/FareedKhan-dev/kimi-k3-in-c) have been merged upstream:
+
+- **[PR #6 — verify checkpoint downloads against Hub checksums](https://github.com/FareedKhan-dev/kimi-k3-in-c/pull/6)** — replaced a removed Hugging Face CLI path, pinned immutable Hub revisions, and added checksum verification so same-size checkpoint corruption cannot silently pass size-only validation. Merged August 6, 2026.
+- **[PR #13 — synthetic trunk streaming regression coverage](https://github.com/FareedKhan-dev/kimi-k3-in-c/pull/13)** — added weightless regression coverage for one-slot/two-slot trunk streaming, async prefetch isolation, ring wraparound, and failed-read publication safety. The mutation check fails when the one-slot guard is deliberately defeated. Merged August 26, 2026.
+
 ## Selected work
 
 ### [Agent Flight Recorder](https://github.com/cwwjacobs/agent-flight-recorder)
