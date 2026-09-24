@@ -17,6 +17,12 @@ Both changes turn silent correctness risks into explicit, testable invariants: *
 
 ## Selected work
 
+### [cindermote](https://github.com/cwwjacobs/cindermote)
+Collapse-ready runtime for untrusted agent material inside disposable Firecracker microVMs. Every run is bounded, observed, and burnable: receipts at the boundary, nothing persistent by default. Apache-2.0.
+
+### [Local Eval Foundry](https://github.com/cwwjacobs/local-eval-foundry)
+Deterministic, provenance-bound AI evaluation infrastructure. Sealed scoring, reproducible benchmark packs, and auditable run receipts — evals that can be replayed, challenged, and verified instead of trusted.
+
 ### [Agent Flight Recorder](https://github.com/cwwjacobs/agent-flight-recorder)
 Local-first observability for tool-using agents. Captures model calls, tool activity, state, checkpoints, replay evidence, exports, regression cases, and eval seeds.
 
@@ -49,4 +55,4 @@ A local-first JSON and JSONL browser tool. No backend, no account, no telemetry,
 **Corey Jacobs**  
 Commercial licensing / project inquiries: **coresynth@gmail.com**
 
-Most current releases are source-available. Repository-specific license files control permitted use.
+Most current releases are source-available under the PolyForm Noncommercial license (cindermote is Apache-2.0). Repository-specific license files control permitted use.
