@@ -53,6 +53,9 @@ A local-first JSON and JSONL browser tool. No backend, no account, no telemetry,
 ## Contact
 
 **Corey Jacobs**  
-Commercial licensing / project inquiries: **coresynth@gmail.com**
+Commercial licensing / project inquiries: **coresynth@gmail.com** · **cjacobs@gtdataworks.com**
+
+[Gold Trace Dataworks](https://gtdataworks.com) — evidence-bound dataset production  
+[Terminus Protocol](https://terminusprotocol.io) — the U-KSL method and core canon
 
 Most current releases are source-available under the PolyForm Noncommercial license (cindermote is Apache-2.0). Repository-specific license files control permitted use.
