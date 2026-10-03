@@ -4,6 +4,10 @@ I build evidence-first infrastructure for AI systems: observable agent runs, det
 
 The common thread is simple: **probabilistic systems should leave deterministic evidence behind.**
 
+## Current focus
+
+**Agentic browser safety, prompt-injection defense, and observable web-agent execution.** I recently applied for an agentic browser position with Mercor, and the work below reflects the systems problems I care most about in that space: treating web content as untrusted data, constraining authority, detecting behavioral deviation, and leaving replayable evidence behind.
+
 ## Upstream contributor — kimi-k3-in-c
 
 I contribute to [FareedKhan-dev/kimi-k3-in-c](https://github.com/FareedKhan-dev/kimi-k3-in-c), a low-level C inference project where checkpoint integrity, buffer ownership, streaming, and memory behavior can directly affect model correctness.
@@ -16,6 +20,12 @@ Two of my changes have been merged upstream:
 Both changes turn silent correctness risks into explicit, testable invariants: **byte integrity at the checkpoint boundary and buffer ownership at the streaming boundary.**
 
 ## Selected work
+
+### [DIF Defense](https://github.com/cwwjacobs/dif-defense)
+Working research prototype for **behavioral prompt-injection detection in bounded agent workflows**. Compares observable traces against a frozen Kernel of forbidden tools, outputs, and state mutations; can use a known-clean baseline and returns bounded `clean` / `warn` / `compromised` verdicts without claiming access to hidden model reasoning.
+
+### [Terminus AEGIS Protocol](https://github.com/cwwjacobs/terminus-aegis-protocol)
+Safe agent web traversal and observability built around **frozen user intent, SSRF-hardened ingress, receipted packet evaluation, Trust Reports, and Agent Flight Recorder replay**. External web content can become evidence, but never implicit authority.
 
 ### [cindermote](https://github.com/cwwjacobs/cindermote)
 Collapse-ready runtime for untrusted agent material inside disposable Firecracker microVMs. Every run is bounded, observed, and burnable: receipts at the boundary, nothing persistent by default. Apache-2.0.
